@@ -1,0 +1,46 @@
+---
+import SiteMeta from "../components/SiteMeta.astro"; '../components/SiteMeta.astro';
+const {
+  title = 'Victor Space',
+  description = 'My personal portfolio site. Contains my resume, projects, about me page, personal blog.',
+  url,
+  image = '/social-preview-image.png',
+  author = 'Victor Eno',
+} = Astro.props;
+
+import '@fontsource/poppins/100.css';
+import '@fontsource/poppins/200.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '@fontsource/poppins/900.css';
+import Header from "../components/Header.astro";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<SiteMeta
+      title={title}
+      description={description.substring(0, 100)}
+      url={Astro.site
+        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
+        : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
+      image={image}
+      author={author}
+    />
+	</head>
+	<body>
+		<Header />
+		<slot />
+	</body>
+</html>
+

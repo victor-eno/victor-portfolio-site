@@ -1,0 +1,72 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<'blog'>;
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<DefaultLayout>
+ <section>
+  <article>
+    <h1 class="title">{post.data.title}</h1>
+    <p> 
+       {post.data.pubDate.toDateString()}
+    </p>
+    <hr />
+    <Content />
+  </article>
+ </section>
+</DefaultLayout>
+
+<style>
+  section {
+    padding-top: 50px;
+   }
+   article {
+     margin: 40px;
+    padding: 20px 200px 200px 200px;
+   }
+   article h1 {
+     color: #ef96c5;
+     font-size: 4em;
+     font-weight: 900;
+     line-height: 1em;
+   }
+   a {
+     color: rgb(107, 207, 254);
+     text-decoration: none;
+     font-family: 'Poppins', Courier, monospace;
+     font-weight: 700;
+     cursor: pointer;
+   }
+   p {
+     font-size: 25px;
+     color: #84ebf4;
+     padding-top: 10px;
+     font-weight: 600;
+   }
+
+   @media screen and (max-width: 800px) {
+    article {
+     margin: 0;
+    padding: 90px 10px;
+   }
+   article h1 {
+     color: #ef96c5;
+     font-size: 3.2em;
+     font-weight: 800;
+     line-height: 1em;
+   }
+   }
+</style>
+

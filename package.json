@@ -1,0 +1,16 @@
+{
+  "name": "my-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
+    "astro": "^3.3.0"
+  }
+}

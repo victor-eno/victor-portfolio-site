@@ -1,0 +1,121 @@
+---
+
+---
+
+<div class="hamburger-menu">
+   <div class="line"></div>
+   <ul class="links">
+      <a href="/"><li>Home</li></a>
+      <a href="/about"><li>About</li></a>
+      <a href="/blog"><li>Blog</li></a>
+   </ul>
+</div>
+
+<style>
+   
+   .hamburger-menu {
+      display: none;
+   }
+   .hamburger-menu ul {
+      display: none;
+   }
+
+   @media screen and (max-width: 800px) {
+   .hamburger-menu {
+   width: 80px;
+   height: 80px;
+   padding: 0 0 0 20px;
+   background-color: transparent;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   cursor: pointer;
+   border-radius: 50px;
+   transition: all .5s ease-in-out;
+ }
+ .hamburger-menu:hover {
+   color: #000000;
+ }
+ .line {
+   width: 40px;
+   height: 2px;
+   background: black;
+   border-radius: 5px;
+   transition: all .5s ease-in-out;
+ }
+ .line::before,
+ .line::after {
+   content: '';
+   width: 40px;
+   height: 2px;
+   background: black;
+   border-radius: 5px;
+   position: absolute;
+   transition: all .5s ease-in-out;
+ }
+ .line::before {
+   transform: translateY(12px);
+ }
+ .line::after {
+   transform: translateY(-12px);
+ }
+
+/* ANIMATION */
+
+.hamburger-menu.open .line {
+   z-index: 1;
+   transform: translateX(-50px);
+   background: transparent;
+ }
+
+.hamburger-menu.open .line::before {
+   transform: rotate(45deg) translate(35px, -35px);
+ }
+
+.hamburger-menu.open .line::after {
+   transform: rotate(-45deg) translate(35px, 35px);
+ }
+.hamburger-menu.open:hover {
+   background: none;
+ }
+ 
+.hamburger-menu.open .links {
+   display: block;
+   left: -5px;
+   position:absolute;
+   padding-top: 300px;
+   width: 1000%;
+   transition:  .2s ease-in-out;
+   margin: 0;
+   list-style: none;
+   cursor: pointer;
+   background: black;
+   background-size: 400% 400%;
+   opacity: 0.6;
+ }
+
+.hamburger-menu.open a {
+   display: block;
+   color: white;
+   padding: 20px;
+   list-style: none;
+   text-decoration: none;
+ }
+
+}
+
+</style>
+
+<script>
+   const menuBtn = document.querySelector('.hamburger-menu');
+   let menuOpen = false;
+   menuBtn?.addEventListener('click', () => {
+      if (!menuOpen) {
+         menuBtn.classList.add('open');
+         menuOpen = true;
+      } else {
+         menuBtn.classList.remove('open');
+         menuOpen = false;
+      }
+   });
+</script>

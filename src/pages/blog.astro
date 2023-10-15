@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import BlogHeader from '../components/BlogHeader.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => {
+  return data.isDraft !== true;
+})).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<DefaultLayout>
+ <div class="blog-header"> <BlogHeader /></div>
+  <section>
+    <ul class="content">
+      {
+        posts.map((post) => (
+          <li>
+            <h1><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h1>
+            <h2> 
+               {post.data.pubDate.toDateString()}
+            </h2>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.slug}/`}>{post.data.fullPost}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</DefaultLayout>
+
+<style>
+   .blog-header {
+    padding: 100px;
+    }
+
+  section ul {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  section .content {
+    margin: 40px;
+    padding: 20px 200px 200px 200px;
+  }
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    line-height: 1em;
+    margin: 0;
+    font-weight: 900;
+  }
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    padding: 10px 2px;
+    font-weight: 800;
+  }
+   .content .author a {
+    color: var(--pink-light-shift);
+  }
+  .content p {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .content a {
+    color: #84ebf4;
+    text-decoration: none;
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 800px) {
+    section .content {
+    margin: 0;
+    padding: 10px;
+  }
+  .content h1 {
+    font-size: 1.6em;
+    margin: 0;
+    font-weight: 900;
+  }
+  .blog-header {
+    padding: 100px 50px;
+    }
+  }
+</style>
+
+

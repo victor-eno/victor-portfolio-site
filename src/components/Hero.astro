@@ -1,0 +1,131 @@
+---
+import ProjectButton from "../components/ProjectButton.astro";
+
+---
+
+<section>
+    <div class="hero">
+       <div class="hero-text">
+        <h3>Hi!</h3>
+        <h2><span class="pronoun">I am</span></h2>
+        <h1 class="victor">Victor</h1>
+
+        <p class="value">
+            I'm a programmer and a software developer.
+            I will help you build exceptional user
+            experiences through clean, responsive, and 
+            visually appealing web interfaces.
+             I'm a programmer and a software developer.
+            I will help you build exceptional user
+            experiences through clean, responsive, and 
+            visually appealing web interfaces.
+        </p>
+       </div>
+
+      <div class="call-to-action">
+        <ProjectButton />
+    </div>
+    </div>
+</section>
+
+<style>
+    section {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to left, #84ebf4, #ef96c5);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+    }
+    @keyframes Gradient {
+	    0% {
+		    background-position: 0% 50%
+	    }
+	    50% {
+		    background-position: 100% 50%
+	    }
+	    100% {
+		    background-position: 0% 50%
+	    }
+}
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .call-to-action {
+        display: block;
+        padding: 60px;
+    }
+    .hero-text {
+        padding: 50px 0 0 10px;
+    }
+    h3 {
+        font-size: 3.8em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 500;
+        line-height: 0.9em;
+    }
+    h2 {
+        font-size: 5em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 700;
+        line-height: 0.9em;
+    }
+    h1 {
+        font-size: 6.7em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 900;
+        line-height: 1em;
+    }
+    .victor {
+        z-index: 2;
+        color: transparent;
+        background-image: linear-gradient(to right,  #ffffff, #ef96c5, #ffffff,  #84ebf4, #84ebf4, #000, #000);
+        -webkit-background-clip: text;
+        animation: animate 15s linear infinite;
+        background-size: 1000%;
+    } 
+    @keyframes animate {
+        0%{
+            background-position: 0% 100%;
+        }
+        50%{
+            background-position: 100% 0%;
+        }
+        100%{
+            background-position: 0% 100%;
+        }
+        }  
+    .value {
+        padding: 0 0 0 0px;
+    }
+    .hero p {
+        max-width: 76vw;
+        line-height: 0.9em;
+       }  
+    @media (min-width: 800px) {
+       .hero {
+        flex-direction: row;
+        padding: 100px 100px;
+        margin: 0;
+       } 
+       .hero p {
+        max-width: 32vw;
+       }
+       h3 {
+        font-size: 4.2em;
+    }
+    h2 {
+        font-size: 7.4em;
+    }
+    h1 {
+        font-size: 9.4em;
+        line-height: 1em;
+    }
+    }
+</style>

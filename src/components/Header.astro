@@ -1,0 +1,47 @@
+---
+import HamburgerMenu from "./HamburgerMenu.astro";
+import Links from "./Links.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
+import "../styles/global.css";
+---
+
+<header>
+<div class="links"><Links /></div>
+<div class="display-theme"><ThemeSwitch /></div>
+<div class="invisible-div"></div>
+<div class="hamburger"><HamburgerMenu /></div>
+</header>
+
+<style>
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-end;
+    }
+    .links {
+        flex: initial;
+    }
+    .display-theme {
+     padding: 25px 0 0 0;
+     max-width: 5vw;
+    }
+    .invisible-div {
+        width: 50px;
+        height: 100px;
+    }
+
+    /* Mobile Response */
+
+    @media screen and (max-width: 800px) {
+    .invisible-div {
+        display: none;
+    }
+}
+
+</style>

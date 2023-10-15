@@ -1,0 +1,55 @@
+---
+
+---
+
+<nav class="navbar">
+    
+    <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+
+</nav>
+
+<style>
+    .navbar {
+        position: relative;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        padding: 10px;
+    }
+    .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        color: inherit;
+    }
+    .navbar ul a {
+        display: flex;
+        padding: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+    }
+    .menu a {
+        font-size: 1.1em;
+        font-family: 'Poppins', Courier, monospace;
+        cursor: pointer;
+    }
+    .menu a:hover {
+   
+    }
+/* Mobile Response */
+
+@media screen and (max-width: 800px) {
+    nav {
+        display: none;
+    }
+}
+</style>
