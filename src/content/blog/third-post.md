@@ -10,8 +10,7 @@ fullPost: "Read more"
 
 JavaScript objects have a link to another object, known as the prototype, from which they inherit properties and methods. Since prototypes are objects and have their own prototype, objects form an inheritance chain that allows complex features to be defined once and used consistently.
 
-```JavaScript
-
+```js
 
 let bookOne = {
     title: "Seven Seals",
@@ -23,7 +22,6 @@ let bookOne = {
 }
 console.log(`Seven Seals by: ${bookOne.author}, ${bookOne.boxRating()}`);
 console.log(`toString: ${bookOne.toString()}`);
-
 ```
 The first console.log statement receives a template string that includes the rating property, which is one of the bookOne object’s own properties. The new statement invokes the toString method. None of the bookOne object’s own properties is named toString, so the JavaScript runtime turns to the bookOne object’s prototype, which is Object and which does provide a property named toString
 
@@ -39,7 +37,7 @@ The first console.log statement receives a template string that includes the rat
 | getOwnPropertyNames               |  returns the names of an object’s own properties|
 
 
-```JavaScript
+```js
 
 let bookOne = {
     title: "Seven Seas",
@@ -80,7 +78,7 @@ bookOne toString: [object Object]
 The output shows that the bookOne and bookTwo objects have the same prototype. 
 Because prototypes are regular JavaScript objects, new properties can be defined on prototypes, and new values can be assigned to existing properties.
 
-```JavaScript
+```js
 
 let bookOne = {
     title: "Seven Seas",
@@ -117,7 +115,7 @@ toString: Name: Black nights, Rating:  5
 Changes to Object should be made cautiously because they affect all the other objects in the application. The new toString function produces more useful output for the bookOne and bookTwo objects but assumes that there will be title and rating properties, which won’t be the case when toString is called on other objects.
 A better approach is to create a prototype specifically for those objects that are known to have name and price properties, which can be done using the Object.setPrototypeOf method.
 
-```JavaScript
+```js
 
 let BookProto = {
     toString: function() {
@@ -159,7 +157,7 @@ Prototypes can be defined just like any other object. In the above, an object na
 # Using Constructor Functions
 A constructor function is used to create a new object, configure its properties, and assign its prototype, all of which is done in a single step with the new keyword. Constructor functions can be used to ensure that objects are created consistently and that the correct prototype is applied.
 
-```JavaScript
+```js
 let Book = function(title, rating) {
             this.title = title;
             this.rating = rating; 
@@ -183,7 +181,7 @@ toString: Name: Black Nights, Rating: 5
 
 The JavaScript runtime creates a new object and uses it as the this value to invoke the constructor function, providing the argument values as parameters. The constructor function can configure the object’s own properties using this, which is set to the new object.
 
-```JavaScript
+```js
 let Book = function(title, rating) {
             this.title = title;
             this.rating = rating; 
@@ -192,7 +190,8 @@ let Book = function(title, rating) {
 
 The prototype for the new object is set to the object returned by the prototype property of the constructor function. This leads to constructors being defined in two parts—the function itself is used to configure the object’s
 own properties, while the object returned by the prototype property is used for the properties and methods that should be shared by all the objects the constructor creates. In the listing, a toString property is added to the Book constructor function prototype and used to define a method.
-```JavaScript
+
+```js
 Book.prototype.toString = function() {
     return `toString: Name: ${this.title}, Rating:
     ${this.rating}`; 
@@ -203,7 +202,7 @@ The result is the same as the previous example, but using a constructor function
 # Chaining Constructor Functions
 Using the setPrototypeOf method to create a chain of custom prototypes is easy, but doing the same thing with constructor functions requires a little more work to ensure that objects are configured correctly by the functions and get the right prototypes in the chain. Listing 4-8 introduces a new constructor function and uses it to create a chain with the Product constructor.
 
-```JavaScript
+```js
 let Book = function(title, rating) {
             this.title = title;
             this.rating = rating; 
@@ -240,14 +239,15 @@ toString: Name: Black Nights, Rating: 5
 ```
 
 Two steps must be taken to arrange the constructors and their prototypes in a chain. The first step is to use the call method to invoke the next constructor so that new objects are created correctly. In the listing, I want the Discount constructor to build on the Book constructor, so I have to use call on the Book function so that it adds its properties to new objects.
-```JavaScript
+
+```js
 Book.call(this, title, rating);
 ```
 
 The call method allows the new object to be passed to the next constructor through the this value.
 The second step is to link the prototypes together.
 
-```JavaScript
+```js
 Object.setPrototypeOf(Discount.prototype, Book.prototype);
 ```
 
@@ -259,7 +259,8 @@ The Discount prototype defines a toDiscountString method that invokes toString, 
 ## Accessing Overridden Prototype Methods
 A prototype can override a property or method by using the same name as one defined further along the chain. This is also known as shadowing in JavaScript, and it takes advantage of the way that the JavaScript runtime follows the chain.
 Care is required when building on an overridden method, which must be accessed through the prototype that defines it. The Discount prototype can define a toString method that overrides the one defined by the Product prototype and can invoke the overridden method by accessing the method directly through the prototype and using call to set the this value.
-```JavaScript
+
+```js
 Discount.prototype.toString = function() {
 let chainResult = Book.prototype.toString.call(this);
 return `${chainResult}, Tax: ${this.boxRating()}`;
@@ -270,7 +271,7 @@ This method gets a result from the Book prototype’s toString method and combin
 # Checking Prototype Types
 The instanceof operator is used to determine whether a constructor’s prototype is part of the chain for a specific object
 
-```JavaScript
+```js
 let Book = function(title, rating) {
             this.title = title;
             this.rating = rating; 
@@ -322,7 +323,7 @@ Tip Notice that the instanceof operator is used with the constructor function. T
 # Defining Static Properties and Methods
 Properties and methods that are defined on the constructor function are often referred to as static, meaning they are accessed through the constructor and not individual objects created by that constructor (as opposed to instance properties, which are accessed through an object). The Object.setPrototypeOf and Object.getPrototypeOf methods are good examples of static methods. 
 
-```JavaScript
+```js
 let Book = function(title, rating) {
             this.title = title;
             this.rating = rating; 
@@ -347,7 +348,7 @@ The static process method is defined by adding a new property to the Book functi
 # Using JavaScript Classes
 JavaScript classes were added to the language to ease the transition from other popular programming languages. Behind the scenes, JavaScript classes are implemented using prototypes, which means that JavaScript classes have some differences from those in languages such as C# and Java
 
-```JavaScript
+```js
 class Book {
     constructor(title, rating) {
         this.title = title;
@@ -487,6 +488,7 @@ toString: Title: Black nights, Rating: 5
 ```
 This example above uses an object named data to collect Book objects. New
 values can be added to the collection by defining new properties, like this:
+
 ```js
 data.boots = new Product("Boots", 100); 
 ```
@@ -500,6 +502,7 @@ This method returns an array containing the property names defined by the object
 This method returns an array containing the property values defined by the object.
 
 the Object.keys method to get an array containing the property names defined by the data object and uses the array forEach method to get the corresponding value. When a property name is assigned to a variable, the corresponding value can be obtained using square brackets, like this:
+
 ```js
 Object.keys(data).forEach(key => console.log(data[key].toString()));
 ```
@@ -543,6 +546,7 @@ The API provided by Map allows items to be stored and retrieved, and iterators a
 
 # Using Symbols for Map Keys
 The main advantage of using a Map is that any value can be used as a key, including Symbol values. Each Symbol value is unique and immutable and ideally suited as an identifier for objects. below defines a new Map that uses Symbol values as keys.
+
 ```js
 class Book {
     constructor(title, rating) {
