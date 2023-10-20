@@ -1,22 +1,49 @@
 ---
-import ProjectButton from '../components/ProjectButton.astro';
+import AboutBanner from '../components/AboutBanner.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+
 const title = 'about me';
 const description = 'who in the world I am';
 ---
 
 <DefaultLayout title={title} description={description}>
-    <main>
-        <div><ProjectButton /></div>
-    </main>
+   <section>
+    <div class="main">
+        <AboutBanner />
+        <div class="about-box">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, at magni ab natus eius excepturi architecto, quaerat mollitia amet quod illo hic unde cum quo veniam aut quas ipsum. Id.
+                Quasi maiores fuga deleniti nam rerum tempore nulla doloremque blanditiis odio quisquam. Praesentium ea illum totam excepturi eligendi mollitia explicabo placeat laudantium quaerat non nihil, et magni cupiditate natus alias?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, at magni ab natus eius excepturi architecto, quaerat mollitia amet quod illo hic unde cum quo veniam aut quas ipsum. Id.
+                Quasi maiores fuga deleniti nam rerum tempore nulla doloremque blanditiis odio quisquam. Praesentium ea illum totam excepturi eligendi mollitia explicabo placeat laudantium quaerat non nihil, et magni cupiditate natus alias?
+            </p>
+        </div>        
+    </div>
+   </section>
 </DefaultLayout>
+
 <style>
-    main {
-        padding-top: 100px;
-        min-height: 100vh;
-        min-width: 100vw;
+     section {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        background: linear-gradient(-45deg, #729ed7, #58c5ef, #230327, #042835);
+        background-size: 400% 400%;
+    }
+    .main {
+        padding: 150px;
+    }
+    .about-box {
+        padding-top: 120px;
+    } 
+    @media screen and (max-width: 800px) {
+        .main {
+            padding: 100px 10px;
+        }
+        .about-box {
+        padding-top: 70px;
+    } 
     }
 </style>

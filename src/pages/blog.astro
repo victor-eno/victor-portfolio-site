@@ -11,8 +11,8 @@ const posts = (await getCollection('blog', ({ data }) => {
 ---
 
 <DefaultLayout>
- <div class="blog-header"> <BlogHeader /></div>
   <section>
+    <div class="blog-header"> <BlogHeader /></div>
     <ul class="content">
       {
         posts.map((post) => (
@@ -31,6 +31,12 @@ const posts = (await getCollection('blog', ({ data }) => {
 </DefaultLayout>
 
 <style>
+  section {
+    padding: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #729ed7, #58c5ef, #230327, #042835);
+    background-size: 400% 400%;
+  }
    .blog-header {
     padding: 100px;
     }
@@ -42,7 +48,7 @@ const posts = (await getCollection('blog', ({ data }) => {
 
   section .content {
     margin: 40px;
-    padding: 20px 200px 200px 200px;
+    padding: 20px 100px 200px 100px;
   }
   h1 {
     font-family: 'Poppins', sans-serif;
