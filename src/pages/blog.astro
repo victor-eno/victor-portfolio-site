@@ -50,20 +50,10 @@ const posts = (await getCollection('blog', ({ data }) => {
     margin: 40px;
     padding: 20px 100px 200px 100px;
   }
-  h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2em;
-    line-height: 1em;
-    margin: 0;
-    font-weight: 900;
-  }
-  .content a:hover {
-    color: #ef96c5;
-  }
   h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4em;
-    padding: 10px 2px;
+    padding: 1px 2px 10px;
     font-weight: 800;
   }
   .content p {
@@ -71,11 +61,17 @@ const posts = (await getCollection('blog', ({ data }) => {
     padding-bottom: 20px;
   }
   .content a {
-    color: #84ebf4;
+    color: var(--blue-shift);
     text-decoration: none;
     font-family: 'Poppins', Courier, monospace;
     font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin: 0;
     cursor: pointer;
+  }
+  .content a:hover {
+    color: #ef96c5;
   }
   @media screen and (max-width: 800px) {
     section .content {

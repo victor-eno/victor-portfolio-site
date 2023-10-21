@@ -18,7 +18,6 @@ import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
 import '@fontsource/poppins/900.css';
 import Header from "../components/Header.astro";
-import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -59,8 +58,10 @@ import '../styles/global.css';
 			white 60%
 		);
 		--blue-shift: rgb(65, 200, 255);
-		--pink-shift: rgb(230, 30, 255);
-		--pink-light-shift: rgba(255, 103, 230, 0.881);
+		--purple-shift: rgb(230, 30, 255);
+		--pink-shift: rgba(255, 103, 230, 0.881);
+		--pink-sea: #ef96c5;
+		--blue-dew: #84ebf4;
 
     font-family: 'Poppins', Courier, monospace;
 }
@@ -87,15 +88,15 @@ import '../styles/global.css';
 		min-height: 100vh;
 	}
 	h1 {
-		font-size: 1.6em;
+		font-size: 2em;
 		line-height: 1.2em;
-		color: rgb(179, 219, 251);
+		padding: 10px 0;
+		color: white;
 	}
 	img {
   		max-width: 100%;
   		height: auto;
 		}
-
 	hr {
   		padding: 0;
   		border: 0;
@@ -117,7 +118,6 @@ import '../styles/global.css';
   		margin: 1.2em 0;
   		padding: 1.2em;
 	}
-
 	pre code {
   		padding: 0;
 	}
@@ -162,6 +162,16 @@ import '../styles/global.css';
 
 	td {
   		padding: 0.4em 0.8em;
+	}
+	ol {
+		padding: 20px;
+		display: inline-block;
+	}
+	a {
+		font-size: 1em;
+		list-style: none;
+		text-decoration: none;
+		color: var(--blue-dew);
 	}
 	@media screen and (max-width: 800px) {
 		code {
