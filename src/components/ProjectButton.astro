@@ -9,19 +9,22 @@
 <style>
     .btn {
     display: inline-block;
-    padding: 10px 34px;
+    padding: 6px 34px;
     text-align: center;
     border: 2px solid var(--blue-shift);
-    background-color: transparent;
     font-family: 'Poppins', Courier, monospace;
     font-weight: 300;
     width: 300px;
     height: 45px;
     border-radius: 40px;
-    cursor: pointer;
-    animation: blink 4s infinite alternate;
+    cursor: pointer; 
+    background-color: transparent;
+    color: white;
 }
-@-webkit-keyframes blink {
+    .btn {
+    animation: blink 4s infinite alternate;
+    }
+    @-webkit-keyframes blink {
     40% {
         opacity: 1;
     }
@@ -38,14 +41,10 @@
         opacity: 1;
     }
 }
-.one {
-    border: 1px solid var(--blue-shift);
-    box-shadow: 5px 5px 5px var(--blue-shift);
-}
-.one:hover {
-    background: transparent;
+    .one:hover {
+    background: linear-gradient(45deg, #59befc, #48dbf8);
     color: white;
-    border: 2px solid var(--pink-shift);
+    border: 2px solid var(--blue-shift);
     background-position: 0%;
-}
+    }
 </style>
