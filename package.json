@@ -10,8 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/tourney": "^5.0.18",
+    "@fontsource/bungee-shade": "^5.0.17",
     "@fontsource/poppins": "^5.0.8",
     "@fontsource/roboto": "^5.0.8",
+    "@fontsource/silkscreen": "^5.0.17",
     "astro": "^3.3.0"
   }
 }
