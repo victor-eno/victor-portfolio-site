@@ -1,0 +1,17 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import ProjectsBanner from '../components/ProjectsBanner.astro'
+
+const title = 'my projects';
+const description = "things I'm working on";
+---
+
+<DefaultLayout title={title} description={description}>
+   <section>
+    <div class="projects-header"> <ProjectsBanner /></div>
+   </section>
+</DefaultLayout>
+
+<style>
+     
+</style>

@@ -31,14 +31,23 @@
         display: flex;
         padding: 20px;
         text-decoration: none;
-        background: linear-gradient(to left,#ee07bc, #48dbf8, #6cbefd);
+        background: linear-gradient(45deg, rgb(12, 81, 108), rgb(65, 200, 255), #2bbef2);
         background-size: 400% 400%;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
     .navbar ul a:hover {
-        color: var(--pink-sea);
+        color: white;
+        animation: bounce 1s;
+    }
+    @keyframes bounce {
+        0% , 100% {
+        transform: translateY(0);
+    }
+        50% {
+        transform: translateY(-3px);
+    }
     }
     .navbar ul {
         display: flex;

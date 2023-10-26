@@ -33,20 +33,19 @@ const posts = (await getCollection('blog', ({ data }) => {
 <style>
   section {
     padding: 0;
-    padding: 0;
-    background: linear-gradient(-45deg, #729ed7, #58c5ef, #230327, #042835);
-    background-size: 400% 400%;
+    margin: 0;
+    background: var(--purple-mirage);
   }
    .blog-header {
-    padding: 100px;
+    padding: 0;
     }
 
-  section ul {
+  ul {
     list-style: none;
     text-decoration: none;
   }
 
-  section .content {
+  .content {
     margin: 40px;
     padding: 20px 100px 200px 100px;
   }
@@ -84,7 +83,7 @@ const posts = (await getCollection('blog', ({ data }) => {
     font-weight: 900;
   }
   .blog-header {
-    padding: 100px 50px;
+    padding: 0;
     }
   }
 </style>
