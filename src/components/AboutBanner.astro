@@ -1,34 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import astroImage from '../assets/avatar.png'
+
 ---
 
 <div class="banner-head">
-    <div class="banner">
-        <h1><span class="name">About</span>me</h1>
-            <div class="avatar">
-              
-            </div>
-    </div>
+        <h1 class="about">About</h1>
+            <div class="avatar">    
+        </div>
 </div>
 
 <style>
     .banner-head {
         position: relative;
-        padding: 0px;
+        padding-top: 10em;
         margin: 0;
         left: 0;
         right: 0;
         top: 0;
         display: flex;
+        background-color: #6b4ee6;
     }
-    .banner {
-        width: 100%;
-        height: 10em;
-        border: 1px solid white;
-        background: transparent;
-        background-size: 400% 400%;
-   }
    .avatar {
         position: absolute;
         width: 25%;
@@ -37,40 +27,52 @@ import astroImage from '../assets/avatar.png'
         border: 4px solid white;
         top: 100%;
         left: 5%;
-        margin-top: -75px;
+        margin-top: -120px;
         background: linear-gradient(45deg, #84ebf4, #ef96c5);
         background-size: 400% 400%;
    }
-   .banner-head h1 {
+    h1 {
     justify-content: center;
     justify-items: center;
     text-align: center;
-    padding: 40px;
+    padding-bottom: 0.1em;
     margin: 0;
-    color: white;
+    min-width: 100vw;
+    min-height: 4vh;
+    color: #ed30b2;
     line-height: 0.7em;
-    font-size: 4.6em;
+    font-size: 18.6em;
     font-family:'Poppins', Courier, monospace;
     font-weight: 800;
    }
-   .name {
-    padding: 10px;
-    color: var(--pink-sea);
-   }
+   
    @media screen and (max-width: 800px) {
-    .banner {
-    width: 100%;
-    height: 7em;
-   }
+    .banner-head {
+        position: relative;
+        padding-top: 5em;
+        margin: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        display: flex;
+        background-color: #6b4ee6;
+    }
    .avatar {
         top: 100%;
         left: 5%;
-        margin-top: -40px;
+        margin-top: -55px;
    }
-    .banner-head h1 {
-    padding: 40px 30px;
-    font-size: 2.8em;
+    h1 {
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    min-width: 100vw;
+    min-height: 16vh;
+    line-height: 0.7em;
+    font-size: 7.6em;
     font-weight: 800;
-    }
+   }
    }
 </style>

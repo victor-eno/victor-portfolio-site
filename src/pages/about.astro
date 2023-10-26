@@ -8,47 +8,72 @@ const description = 'who in the world I am';
 
 <DefaultLayout title={title} description={description}>
    <section>
+    <div class="about-banner"> <AboutBanner /></div>
     <div class="main">
-        <AboutBanner />
-        <div class="about-box">
+        <div class="bio">
+            <h1 class="name">Victor Eno</h1>
+            <h1 class="role">Web Developer</h1>
+            <h2 class="location">Nigeria</h2>
+        </div>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, at magni ab natus eius excepturi architecto, quaerat mollitia amet quod illo hic unde cum quo veniam aut quas ipsum. Id.
                 Quasi maiores fuga deleniti nam rerum tempore nulla doloremque blanditiis odio quisquam. Praesentium ea illum totam excepturi eligendi mollitia explicabo placeat laudantium quaerat non nihil, et magni cupiditate natus alias?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, at magni ab natus eius excepturi architecto, quaerat mollitia amet quod illo hic unde cum quo veniam aut quas ipsum. Id.
                 Quasi maiores fuga deleniti nam rerum tempore nulla doloremque blanditiis odio quisquam. Praesentium ea illum totam excepturi eligendi mollitia explicabo placeat laudantium quaerat non nihil, et magni cupiditate natus alias?
-            </p>
-        </div>        
+            </p>       
     </div>
    </section>
 </DefaultLayout>
 
 <style>
      section {
-        padding: 0;
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        background: linear-gradient(-45deg, #729ed7, #58c5ef, #230327, #042835);
-        background-size: 400% 400%;
+       background-color: var(--purple-mirage);
     }
     .main {
-        padding: 150px;
+        width: 100vw;
+        padding: 10em 10em;
     }
-    .about-box {
-        padding-top: 120px;
-    }
-    .about-box p {
+    .bio {
         font-family: 'Poppins', Courier, monospace;
-        font-size: 1em;
-        font-weight: 200;
+        line-height: 1.2em;
+        padding-top: 10%;
+        padding-bottom: 2em;
+    }
+    .name {
+        font-size: 2.5em;
+        padding: 0;
+        color: #6b4ee6;
     } 
+    .role {
+        font-size: 1.1em;
+        font-weight: 100;
+        padding: 0;
+    }
+    .location {
+        font-size: 1.6em;
+        font-weight: 200;
+        padding-top: 0.4em;
+        color: #6b4ee6;
+    }
+
     @media screen and (max-width: 800px) {
         .main {
-            padding: 100px 10px;
-        }
-        .about-box {
-        padding-top: 70px;
+        width: 100vw;
+        padding: 4em 1em;
     } 
+    .name {
+        font-size: 1.5em;
+        padding: 0;
+    } 
+    .role {
+        font-size: 0.8em;
+        font-weight: 100;
+        padding: 0;
+    }
+    .location {
+        font-size: 1.3em;
+        font-weight: 200;
+        padding-top: 0.1em;
+    }
     }
 </style>
