@@ -4,13 +4,14 @@
 <div class="projects-header">
     <h1 class="projects-theme brilliance">brilliance &</h1>
     <h1 class="projects-theme creative">creative</h1>
-    <h1 class="projects-theme compositions">compositions</h1>
+    <h1 class="projects-theme compositions">forms</h1>
     <span class="leading-theme">...shall never cease</span>
   </div>
   
   <style>
       .projects-header {
-        background-color: #6b4ee6;
+        background: linear-gradient(to bottom, #6b4ee6, #8116fb);
+        background-size: 400%, 100%;
         padding-top: 12em;
       }
       .projects-theme {
@@ -21,9 +22,9 @@
     }
     .brilliance {
         font-size: 8.2em;
-        font-weight: 700;
+        font-weight: 100;
         color: #5ffae0;
-        opacity: 0.88;
+        opacity: 0.28;
     }
     .creative {
         font-size: 9em;
@@ -32,18 +33,32 @@
         padding-left: 100px;
         font-weight: 700;
         color: #5ffae0;
-        opacity: 0.58;
+        opacity: 0.88;
     }
     .compositions {
-        font-size: 7.5em;
+        font-size: 11em;
         letter-spacing: -0.01em;
         margin-bottom: 20px;
         padding-left: 0.1em;
-        padding-top: 0.19em;
-        font-weight: 100;
+        padding-top: 0.1em;
+        font-weight: 900;
         color: #5ffae0;
-        opacity: 0.28;
+        opacity: 0.58;
     }
+    .creative {
+        animation: fade-out 4s alternate;
+    }
+        @keyframes fade-out {
+            0% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0.3;
+            }
+        }
     .leading-theme {
         font-size: 1.8em; 
         font-family: 'Poppins', sans-serif;
@@ -73,19 +88,20 @@
         font-weight: 400;
       }
       .creative {
-        font-size: 5.9em;
+        font-size: 4.5em;
         padding-top: 0.5em;
+        padding-left: 0.5em;
         font-weight: 600;
       }
       .compositions {
-        font-weight: 100;
-        font-size: 3em;
-        padding-top: 0.76em;
+        font-weight: 800;
+        font-size: 5em;
+        padding-top: 0.35em;
     }
     .leading-theme {
           font-size: 1.2em; 
           font-weight: 400;
-          padding-top: 0.2em;
+          padding-top: 0.25em;
           padding-left: 0.25em;
       }
       }

@@ -10,7 +10,7 @@ fullPost: "Read more"
 
 <br></br>
 
-# Extration from:
+## Extration from:
 # Digging Into The Display Property: The Two Values Of Display - Rachel Andrew
 
 Flexbox and CSS Grid Layout methods are essentially values of the CSS display property, a workhorse of a property that doesn’t get a lot of attention.
