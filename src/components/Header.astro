@@ -1,14 +1,16 @@
 ---
 import HamburgerMenu from "./HamburgerMenu.astro";
 import Links from "./Links.astro";
-import ThemeSwitch from "./ThemeSwitch.astro";
 import "../styles/global.css";
+import SocialLinks from "./SocialLinks.astro";
+import GithubIcon from "./GithubIcon.astro";
 ---
 
 <header>
-<div class="links"><Links /></div>
-<div class="invisible-div"></div>
-<div class="hamburger"><HamburgerMenu /></div>
+<div class="github-icon"><GithubIcon /></div>
+<div class="link-tray"><SocialLinks /></div>
+<div class="links"><HamburgerMenu /></div>
+</div>
 </header>
 
 <style>
@@ -23,20 +25,15 @@ import "../styles/global.css";
         margin: 0;
         display: flex;
         flex-direction: row;
-        justify-content:flex-end;
+        justify-content: flex-start;
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
     }
-    .links {
-        flex: initial;
+    .github-icon {
+        flex: auto;
     }
-    .display-theme {
-     padding: 25px 0 0 0;
-     max-width: 5vw;
-    }
-    .invisible-div {
-        width: 50px;
-        height: 100px;
+    .link-tray {
+        padding: 1.3em;
     }
 
     /* Mobile Response */
@@ -44,6 +41,12 @@ import "../styles/global.css";
     @media screen and (max-width: 800px) {
     .invisible-div {
         display: none;
+    }
+    .github-icon {
+        display: flex;  
+    }
+    .links {
+        padding-bottom: 200em;
     }
 }
 

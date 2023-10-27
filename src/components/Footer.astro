@@ -3,10 +3,11 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
+	
 	<div class="social-links">
-		<a href="https://m.webtoo.ls/@astro" target="_blank">
-			<span class="sr-only">Follow Astro on Mastodon</span>
+
+		<a href="#" target="_blank">
+			<span class="sr-only"></span>
 			<svg
 				viewBox="0 0 16 16"
 				aria-hidden="true"
@@ -19,8 +20,8 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-		<a href="https://twitter.com/astrodotbuild" target="_blank">
-			<span class="sr-only">Follow Astro on Twitter</span>
+		<a href="https://twitter.com/vic_magnifico" target="_blank">
+			<span class="sr-only"></span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter"
 				><path
 					fill="currentColor"
@@ -28,8 +29,8 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-		<a href="https://github.com/withastro/astro" target="_blank">
-			<span class="sr-only">Go to Astro's GitHub repo</span>
+		<a href="https://github.com/victor-eno" target="_blank">
+			<span class="sr-only"></span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github"
 				><path
 					fill="currentColor"
@@ -37,20 +38,22 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
+
+		&copy; {today.getFullYear()} Victor Eno
+
 	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: red;
-		color: rgb(var(--gray));
+		padding: 0;
+		background: var(--purple-mirage);
+		color: var(--blue-shift);
 		text-align: center;
 	}
 	.social-links {
 		display: flex;
 		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		gap: 5em;
 	}
 	.social-links a {
 		text-decoration: none;
@@ -58,5 +61,18 @@ const today = new Date();
 	}
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
+	}
+	@media screen and (max-width: 800px) {
+		footer {
+		padding: 0;
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 1em;
+		font-size: 0.9em;
+	}
 	}
 </style>

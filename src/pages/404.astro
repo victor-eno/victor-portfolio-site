@@ -1,0 +1,80 @@
+---
+
+---
+<div class="wrapper">
+    <div class="line-one">Oops!</div>
+    <div class="line-two">sorry</div>
+    <div class="line-three">there is so much disturbing trouble finding that site...</div>
+    <div class="line-four">Check your network connection</div>
+    <div class="line-five">
+        Check the browser settings for things like permission to access that site...
+    </div>
+</div>
+<div class="buttons">
+    <button id="reload" class="btn">try again</button>
+    <a href="/"><button class="btn">home page</button></a>
+</div>
+<style>
+    .wrapper {
+        padding: 0 0 1em 0;
+        margin: 0;
+        min-width: 50vw;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        color: black;
+        font-family: 'monospace', 'Poppins', Courier,;
+    }
+    .line-one {
+        font-size: 5em;
+        color: black;
+        background-color: gainsboro;
+        border: 1px solid black;
+    }
+    .line-two {
+        font-size: 2em;
+    }
+    .line-three {
+        font-size: 2em;
+        border: 1px solid black;
+    }
+    .line-four {
+        font-size: 2em;
+    }
+    .line-five {
+        font-size: 1.5em;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn {
+        font-size: 2em;
+        font-weight: 200;
+        color: black;
+        background-color: gainsboro;
+        border: 2px solid rgb(171, 168, 168);
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: rgb(198, 194, 194);
+    }
+    @media screen and (max-width: 800px) {
+        .line-one,
+        .line-two,
+        .line-three  {
+        font-size: 1em;
+    }
+    .btn {
+        font-size: 1em;
+        font-weight: 100;
+    }
+</style>
+
+<script>
+    const reloadPage = document.getElementById('reload');
+    reloadPage?.addEventListener('click', function() {
+        location.reload();
+    });
+</script>
