@@ -12,8 +12,8 @@ const description = 'who in the world I am';
     <div class="main">
         <div class="bio">
             <h1 class="name">Victor Eno</h1>
-            <h1 class="role">Web Developer</h1>
-            <h2 class="location">Nigeria</h2>
+            <h2 class="location">Web Developer</h2>
+            <h1 class="role">Freelance & Open Source</h1>
         </div>
             <p>
                 Welcome to my web space on the internet. I am a programmer with a restless 
@@ -34,7 +34,7 @@ const description = 'who in the world I am';
 
 <style>
      section {
-       background-color: var(--purple-mirage);
+       background-color: var(--moody-night);
     }
     .main {
         width: 100vw;
@@ -49,18 +49,24 @@ const description = 'who in the world I am';
     .name {
         font-size: 2.5em;
         padding: 0;
-        color: #6b4ee6;
+        color: var(--moody-text);
     } 
     .role {
         font-size: 1.1em;
         font-weight: 100;
         padding: 0;
+        color: var(--moody-text);
     }
     .location {
         font-size: 1.6em;
         font-weight: 200;
-        padding-top: 0.4em;
-        color: #6b4ee6;
+        padding-top: 0.1em;
+        color: var(--moody-text);
+    }
+    p {
+        color: var(--moody-text);
+        font-size: 1.4em;
+        font-weight: 200;
     }
 
     @media screen and (max-width: 800px) {
