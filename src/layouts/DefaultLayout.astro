@@ -122,7 +122,7 @@ import Footer from "../components/Footer.astro";
 	}
 	code {
 		font-family: 'Popinps', system-ui, sans-serif;
-		font-size: calc(1em - 2px);
+		font-size: 1em;
   		color: #555;
   		padding: 0.2em 0.4em;
   		border-radius: 2px;
@@ -156,10 +156,24 @@ import Footer from "../components/Footer.astro";
   		text-align: right;
 	}
 	table {
-  		border-collapse: collapse;
+  		border-collapse: separate;
+		width: 100%;
+		padding: 8px;
+		color: #40444b;
+		background-color: var(--blue-shift);
+		border: 1px solid var(--moody-text);
   		font-family: var(--font-family-sans);
   		font-size: 1.125em;
   		margin: 2em 0;
+	}
+	th, td {
+  		border: 1px solid #40444b;
+  		padding: 0.4em;
+		}
+		
+	ol {
+		padding: 20px;
+		display: inline-block;
 	}
 	figure {
   		padding: 0;
@@ -170,18 +184,6 @@ import Footer from "../components/Footer.astro";
  		 -webkit-margin-start: 0;
  		 -webkit-margin-end: 0;
  		 margin: 0 0 3em 0;
-	}
-	th {
-  		border-bottom: 2px solid #cccccc;
-  		padding: 0.4em 0.8em;
-		}
-
-	td {
-  		padding: 0.4em 0.8em;
-	}
-	ol {
-		padding: 20px;
-		display: inline-block;
 	}
 	a {
 		font-size: 1em;

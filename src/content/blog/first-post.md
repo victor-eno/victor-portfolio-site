@@ -2,7 +2,7 @@
 title: "Understanding The Concept of Web Reality"
 description: "Web pages and applications are often constructed by composing various components together. Components can communicate with each other by passing data and triggering events"
 tags: ["web components", "ssr"]
-pubDate: "2022-07-08"
+pubDate: "2022-07-28"
 author: "David"
 fullPost: "Read more"
 ---

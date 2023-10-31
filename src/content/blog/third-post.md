@@ -2,7 +2,7 @@
 title: "Understanding JavaScript Object Inheritance"
 description: "JavaScript objects have a link to another object, known as the prototype, from which they inherit properties and methods. Since prototypes are objects and have their own prototype, objects form an inheritance chain that allows complex features to be defined once and used consistently"
 tags: ["lorem", "ipsum"]
-pubDate: "2022-07-18"
+pubDate: "2023-02-18"
 author: "Monica"
 fullPost: "Read more"
 ---

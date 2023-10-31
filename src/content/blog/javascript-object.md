@@ -3,7 +3,7 @@ title: "JavaScript Objects"
 description: "As we know there are seven data types in JavaScript. Six of them are called “primitive”, because their values contain only a single thing (be it a string or a number or whatever).
 In contrast, objects are used to store keyed collections of various data and more complex entities"
 tags: ["web components", "ssr"]
-pubDate: "2022-07-08"
+pubDate: "2023-10-08"
 author: "David"
 fullPost: "Read more"
 ---
@@ -19,19 +19,20 @@ A property is a “key: value” pair, where key is a string (also called a “p
 # Create an empty object
 - Using the javaScript object constructor syntax 
 
-```JavaScript
+```js
 let player = new Object();
-
 ```
 
 - Using the object literal syntax. Usually, the figure brackets {...} are used. That declaration is called an object literal.
-```JavaScript
+
+```js
 let player = {
 
 };
 ```
 Both wil have the same output
-```JavaScript
+
+```js
 console.log(player);
 console.log(`${typeof player}`);
 
@@ -42,7 +43,7 @@ object
 Literals and properties
 We can immediately put some properties into {...} as “key: value” pairs:
 
-```JavaScript
+```js
 let player = { 
     name: 'jin', 
     score: 23 
@@ -54,7 +55,7 @@ In the player object, there are two properties:
 2. The second one has the name   and the value 23.
 
 - Add a boolean value
-```JavaScript
+```js
 player.logIn = true;
 
 console.log(player);
@@ -63,7 +64,7 @@ console.log(player);
 { name: 'jin', score: 23, logIn: true }
 ```
 delete a property
-```JavaScript
+```js
 delete player.score;
 
 console.log(player);
@@ -75,7 +76,7 @@ console.log(player);
 Multiword can be add using quote. For multiword properties, the dot access doesn’t work: That’s because the dot requires the key to be a valid variable identifier. That is: no spaces and other limitations.
 There’s an alternative “square bracket notation” that works with any string:
 
-```JavaScript
+```js
 let player = {};
 
 console.log(player);
@@ -99,7 +100,7 @@ console.log(player);
 
 Square brackets also provide a way to obtain the property name as the result of any expression – as opposed to a literal string – like from a variable as follows:
 
-```JavaScript
+```js
 
  let stage = "current level";
  player[stage] = 10;
@@ -115,7 +116,7 @@ Here, the variable key may be calculated at run-time or depend on the user input
 
 # Property value shorthand
 In real code we often use existing variables as values for property names. For instance:
-```JavaScript
+```js
 function newPlayer(name, age){
     return {
         name: "name",
@@ -134,7 +135,7 @@ object
 
 In the example above, properties have the same names as variables. The use-case of making a property from a variable is so common, that there’s a special property value shorthand to make it shorter.
 Instead of name:name we can just write name , like this:
-```JavaScript
+```js
 function newPlayer(name, age){
     return {
         name,
@@ -154,7 +155,7 @@ object
 # Checking for the existence of a property
 A notable objects feature is that it’s possible to access any property. There will be no error if the property doesn’t exist! Accessing a non-existing property just returns undefined . It provides a very common way to test whether the property exists – to get it and compare vs undefined:
 - using the **hasOwnProperty()** method
-```javaScript
+```js
 let player = {};
 
 if (player.hasOwnProperty("score")) {
@@ -167,7 +168,8 @@ if (player.hasOwnProperty("score")) {
 no such property
 ```
 - use the `in` operator
-```javascript
+
+```js
 let player = {};
 
 if ("score" in player) {
@@ -180,7 +182,8 @@ if ("score" in player) {
 no such property
 ```
 Please note that on the left side of in there must be a property name. That’s usually a quoted string. If we omit quotes, that would mean a variable containing the actual name will be tested. For instance:
-```JavaScript
+
+```js
 let player = {
     score: 23
 };

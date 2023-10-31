@@ -2,7 +2,7 @@
 title: "Digging Into The Display Property"
 description: "While it may seem unusual at first for those of us who have been doing CSS for many years, I think these changes really help to explain what is going on when we change the value of display on an element"
 tags: ["lorem", "ipsum"]
-pubDate: "2022-07-18"
+pubDate: "2022-01-28"
 author: "Monica"
 fullPost: "Read more"
 ---
