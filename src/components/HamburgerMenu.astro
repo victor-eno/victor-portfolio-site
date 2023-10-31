@@ -25,12 +25,10 @@
    height: 65px;
    padding: 0;
    margin: 0;
-   background-color: transparent;
    display: flex;
    flex-direction: column;
    justify-content: center;
    cursor: pointer;
-   border-radius: 50px;
    transition: max-height .5s ease-in-out;
  }
  .bg-circle {
@@ -52,8 +50,19 @@
       background: linear-gradient(45deg, #000, #7f8284);
       background-size: 100% 100%;
     }
+    .hamburger-menu.open .bg-circle:hover {
+      background: transparent;
+      background-size: 0;
+    }
+    .hamburger-menu.open .line {
+      background-color: var(--blue-shift);
+    }
+    .hamburger-menu.open .line::after, 
+    .line::before {
+      background-color: var(--blue-shift);
+    }
  .line {
-   width: 28px;
+   width: 23px;
    height: 1px;
    background: var(--blue-shift);
    border-radius: 5px;
@@ -61,7 +70,7 @@
  }
  .line::before {
    content: '';
-   width: 28px;
+   width: 23px;
    height: 1px;
    background: var(--blue-shift);
    border-radius: 5px;
@@ -70,7 +79,7 @@
  }
  .line::after {
    content: '';
-   width: 28px;
+   width: 23px;
    height: 1px;
    background: var(--blue-shift);
    border-radius: 5px;
@@ -78,10 +87,10 @@
    transition: all .5s ease-in-out;
  }
  .line::before {
-   transform: translateY(8px);
+   transform: translateY(5px);
  }
  .line::after {
-   transform: translateY(-8px);
+   transform: translateY(-5px);
  }
 
 /* ANIMATION */
@@ -105,13 +114,16 @@
  
 .hamburger-menu.open .links {
    display: block;
-   left: -5px;
+   left: 0;
+   top: 0;
+   right: 0;
+   border: 1px dotted var(--blue-shift);
    position: absolute;
-   padding-top: 300px;
+   padding-top: 100px;
    width: 100vw;
    background: linear-gradient(-45deg, #01306e, #58c5ef, #230327, #042835);
    background-size: 400% 400%;
-   transition: background .2s ease-out;
+   transition: all 0.3s ease-out;
    margin: 0;
    list-style: none;
    cursor: pointer;
@@ -144,4 +156,5 @@
          menuOpen = false;
       }
    });
+
 </script>
