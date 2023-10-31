@@ -35,19 +35,20 @@ const { Content } = await post.render();
 <style>
   section {
     padding-top: 50px;
-    background: #40444b;
+    background: var(--moody-night);
    }
    article {
      margin: 40px;
      padding: 20px 100px 200px 100px;
    }
    .heading {
-    background-color: #6b4ee6;
+    background-color: var(--moody-text);
+    border: 1px solid var(--moody-night);
     padding: 5em;
     border-radius: 5px 5px;
    }
    article h1 {
-     color: rgb(107, 207, 254);
+     color: var(--moody-night);
      font-size: 4em;
      font-weight: 900;
      line-height: 1em;
@@ -61,14 +62,14 @@ const { Content } = await post.render();
    }
    p {
      font-size: 25px;
-     color: rgb(107, 207, 254);
+     color: var(--moody-night);
      padding-top: 10px;
      font-weight: 600;
    }
    .content {
-      color: rgb(222, 240, 255);
+      color: var(--moody-text);
       font-size: 1.4em;
-      font-weight: 100;
+      font-weight: 300;
    }
    @media screen and (max-width: 800px) {
     article {
@@ -85,9 +86,8 @@ const { Content } = await post.render();
    }
    @media (max-width: 800px) {
     .content {
-      color: rgb(222, 240, 255);
       font-size: 1em;
-      font-weight: 100;
+      font-weight: 300;
    }
    }
    }
