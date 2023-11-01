@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import ProjectsBanner from '../components/ProjectsBanner.astro'
-import { ViewTransitions } from 'astro:transitions';
 
 const title = 'my projects';
 const description = "things I'm working on";
@@ -9,7 +8,7 @@ const description = "things I'm working on";
 
 <DefaultLayout title={title} description={description}>
    <section>
-    <div transition:animate="slide" class="projects-banner"> <ProjectsBanner /></div>
+    <div class="projects-banner"> <ProjectsBanner /></div>
    </section>
 </DefaultLayout>
 
