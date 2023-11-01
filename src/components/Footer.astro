@@ -1,24 +1,27 @@
 ---
-import GreenTea from '../components/GreenTea.astro'
+import GreenTea from '../components/GreenTea.astro';
+
 const today = new Date();
 ---
 
 <footer>
-		<h1>Made with brilliance and</h1>
-		<GreenTea />
-		<h1>&copy; {today.getFullYear()} Victor Eno</h1>
+
+	<h1 class="footer">Made with brilliance</h1>
+	<GreenTea />
+	<h1 class="footer"> &copy; {today.getFullYear()} Victor Eno</h1>
+	
 </footer>
+
 <style>
 	footer {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		padding: 0;
-		background: var(--purple-mirage);
-		color: var(--blue-shift);
 		text-align: center;
+		position: relative;
+		background: var(--purple-mirage);
 	}
-	h1 {
+	.footer {
 		font-size: 1em;
 		font-weight: 200;
 		color: var(--blue-shift);
@@ -27,6 +30,5 @@ const today = new Date();
 		footer {
 		padding: 0;
 		text-align: center;
-	}
 	}
 </style>

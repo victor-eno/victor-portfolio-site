@@ -12,7 +12,7 @@ const posts = (await getCollection('blog', ({ data }) => {
 
 <DefaultLayout>
   <section>
-    <div class="blog-header"> <BlogHeader /></div>
+    <div transition:animate="slide" class="blog-header"> <BlogHeader /></div>
     <ul class="content">
       {
         posts.map((post) => (

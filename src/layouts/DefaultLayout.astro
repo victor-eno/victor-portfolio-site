@@ -22,6 +22,7 @@ import '@fontsource/roboto/900.css';
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <html lang="en">
@@ -40,6 +41,7 @@ import Footer from "../components/Footer.astro";
       image={image}
       author={author}
     	/>
+	<ViewTransitions />
 	</head>
 	<body>
 		<div class="default-layout">
@@ -129,10 +131,7 @@ import Footer from "../components/Footer.astro";
  		-webkit-font-smoothing: antialiased;
  		-moz-osx-font-smoothing: grayscale;
 		}
-	comment {
-		color: red;
-		fo
-	}
+		
 	pre {
   		border-radius: 8px;
   		margin: 1.2em 0;
