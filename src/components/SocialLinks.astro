@@ -30,7 +30,9 @@
     bottom: 0;
     right: 0;
     padding: 0.3em;
-    border: 1px solid var(--blue-shift);
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, var(--blue-swift), var(--blue-shift), var(--blue-rift), var(--blue-drift));
     font-family: 'Poppins', Courier, monospace;
     font-weight: 300;
     width: 320px;
@@ -53,13 +55,13 @@
     width: 250px;
     height: 32px;
     border-radius: 7px;
-    background: linear-gradient(90deg, rgb(12, 81, 108), rgb(65, 200, 255), #2bbef2);
+    background: linear-gradient(120deg, var(--blue-swift), var(--blue-shift), var(--blue-rift), var(--blue-drift), var(--blue-shift));;
     background-size: 400% 400%;
     padding: 0.18em 0;
 }
 .nav-links:hover {
     border: 1px solid var(--blue-shift);
-    background: linear-gradient(90deg, #2bbef2, rgb(12, 81, 108), rgb(65, 200, 255));
+    background: linear-gradient(90deg, var(--blue-swift), var(--blue-shift), var(--blue-rift), var(--blue-drift));;
     background-size: 100% 400%;  
     animation: animate 4s linear infinite;
     background-size: 150%;

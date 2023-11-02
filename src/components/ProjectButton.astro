@@ -5,8 +5,7 @@ import { Icon } from 'astro-icon';
 
 <div class="main-btn">
     <a href="/projects" class="btn one">See My Work 
-    <div .icons><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg>
-    </div>
+    <div .icons><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></div>
     </a>
 </div>
 
@@ -15,9 +14,9 @@ import { Icon } from 'astro-icon';
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5em 4.8em;
+    padding: 0.5em 3.8em;
     text-align: center;
-    border: 2px solid var(--blue-shift);
+    border: 1px solid var(--blue-shift);
     font-family: 'Poppins', Courier, monospace;
     font-weight: 300;
     width: 300px;
@@ -25,7 +24,7 @@ import { Icon } from 'astro-icon';
     border-radius: 10px;
     cursor: pointer; 
     color: white;
-    background: linear-gradient(90deg, rgb(12, 81, 108), rgb(65, 200, 255), #2bbef2);
+    background: linear-gradient(145deg, var(--blue-swift), var(--blue-shift), var(--blue-rift), var(--blue-drift), var(--blue-shift));
     background-size: 400% 400%;
 }
     .btn {
@@ -51,7 +50,7 @@ import { Icon } from 'astro-icon';
     .one:hover {
     color: white;
     border: 2px solid var(--blue-shift);
-    background: linear-gradient(90deg, #2bbef2, rgb(12, 81, 108), rgb(65, 200, 255));
+    background: linear-gradient(90deg, var(--blue-swift), var(--blue-shift), var(--blue-rift), var(--blue-drift));
     background-size: 100% 400%;  
     animation: animate 4s linear infinite;
     background-size: 150%;
@@ -74,7 +73,7 @@ import { Icon } from 'astro-icon';
     justify-content: space-between;
     padding: 0.5em 4.8em;
     text-align: center;
-    border: 2px solid var(--blue-shift);
+    border: 1px solid var(--blue-shift);
     font-family: 'Poppins', Courier, monospace;
     font-weight: 300;
     width: 300px;
