@@ -22,11 +22,11 @@ import { Icon } from 'astro-icon';
     font-weight: 300;
     width: 300px;
     height: 45px;
-    border-radius: 40px;
+    border-radius: 10px;
     cursor: pointer; 
-    background-color: transparent;
     color: white;
-    box-shadow: 5px 5px 5px transparent;
+    background: linear-gradient(90deg, rgb(12, 81, 108), rgb(65, 200, 255), #2bbef2);
+    background-size: 400% 400%;
 }
     .btn {
     animation: blink 4s infinite alternate;
@@ -49,10 +49,41 @@ import { Icon } from 'astro-icon';
     }
 }
     .one:hover {
-    background: var(--blue-shift);
     color: white;
     border: 2px solid var(--blue-shift);
-    background-position: 0%;
-    box-shadow: 5px 5px 5px transparent;
+    background: linear-gradient(90deg, #2bbef2, rgb(12, 81, 108), rgb(65, 200, 255));
+    background-size: 100% 400%;  
+    animation: animate 4s linear infinite;
+    background-size: 150%;
     }
+    @keyframes animate {
+            0%{
+                background-position: 0% 100%;
+            }
+            50%{
+                background-position: 100% 0%;
+            }
+            100%{
+                background-position: 0% 100%;
+            }
+  }
+  @media screen and (max-width: 800px) {
+    .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 4.8em;
+    text-align: center;
+    border: 2px solid var(--blue-shift);
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 300;
+    width: 300px;
+    height: 45px;
+    border-radius: 40px;
+    cursor: pointer; 
+    background-color: transparent;
+    color: white;
+    box-shadow: 5px 5px 5px transparent;
+}
+  }
 </style>

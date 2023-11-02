@@ -53,10 +53,28 @@
     width: 250px;
     height: 32px;
     border-radius: 7px;
-    background-color: var(--blue-shift);
+    background: linear-gradient(90deg, rgb(12, 81, 108), rgb(65, 200, 255), #2bbef2);
+    background-size: 400% 400%;
     padding: 0.18em 0;
-    opacity: 0.87;
 }
+.nav-links:hover {
+    border: 1px solid var(--blue-shift);
+    background: linear-gradient(90deg, #2bbef2, rgb(12, 81, 108), rgb(65, 200, 255));
+    background-size: 100% 400%;  
+    animation: animate 4s linear infinite;
+    background-size: 150%;
+}
+@keyframes animate {
+            0%{
+                background-position: 0% 100%;
+            }
+            50%{
+                background-position: 100% 0%;
+            }
+            100%{
+                background-position: 0% 100%;
+            }
+  }
 .nav-links > a {
     padding: 1em;
     color: white;
