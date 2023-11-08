@@ -1,6 +1,7 @@
 ---
 import ProjectButton from "./ProjectButton.astro";
 import '../../public/fonts/DancingScript-Bold.ttf'
+import Skills from "./Skills.astro";
 ---
 
 <section class="hero">
@@ -77,7 +78,7 @@ import '../../public/fonts/DancingScript-Bold.ttf'
     .name {
         font-family: 'Roboto';
         position: relative;
-        z-index: 2;
+        z-index: 0;
         font-size: 10em;
         font-weight: 900;
         line-height: 1.2;
@@ -86,8 +87,8 @@ import '../../public/fonts/DancingScript-Bold.ttf'
         background: linear-gradient(to left, rgb(24, 96, 125), rgb(12, 81, 108), rgb(24, 96, 125), rgb(14, 77, 101), rgb(65, 200, 255), rgb(70, 193, 241), rgb(79, 202, 250), rgb(24, 96, 125), rgb(24, 96, 125), rgb(12, 81, 108));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-width: 2px;
-        animation: animate 6s linear infinite;
+        -webkit-text-stroke-width: 1px;
+        animation: animate 8s linear infinite;
         background-size: 150%;
     }           
     @keyframes animate {
@@ -140,13 +141,13 @@ import '../../public/fonts/DancingScript-Bold.ttf'
             display: flex;
         }
         h1, .name {
-            font-size: 5.8em;
+            font-size: 5.6em;
             font-weight: 800;
         }
         .hero-text > .greetings {
-            font-size: 2.8em;
+            font-size: 2.6em;
             font-weight: 700;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.16em;
         }
         .call-to-action {
             padding-top: 6em;
