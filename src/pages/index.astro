@@ -1,11 +1,36 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Hero from '../components/Hero.astro';
+import ProjectsBanner from '../components/ProjectsBanner.astro';
 
 const title = "Victor's space";
 const description = 'my personal portfolio'
 ---
 
 <DefaultLayout title={title} description={description}>
-    <Hero />
+    <div class="main-container">
+        <section>
+            <Hero />
+        </section>
+        
+        <section>
+            <div id="projects" class="projects-banner">
+                 <ProjectsBanner />
+            </div>
+        </section>
+    </div>
 </DefaultLayout>
+
+<style>
+    .main-container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+    section {
+        height: 100vh;
+        display: flex;
+        scroll-snap-align: start;
+        background-color: var(--purple-mirage);
+    }
+</style>
