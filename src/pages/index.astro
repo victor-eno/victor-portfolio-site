@@ -9,12 +9,12 @@ const description = 'my personal portfolio'
 
 <DefaultLayout title={title} description={description}>
     <div class="main-container">
-        <section>
+        <div class="hero">
             <Hero />
-        </section>
+        </div>
         
-        <section>
-            <div id="projects" class="projects-banner">
+        <div class="projects">
+            <div id="projects">
                  <ProjectsBanner />
             </div>
         </section>
@@ -27,7 +27,13 @@ const description = 'my personal portfolio'
         overflow-y: scroll;
         height: 100vh;
     }
-    section {
+    .hero {
+        height: 100vh;
+        display: flex;
+        scroll-snap-align: start;
+        background-color: var(--purple-mirage);
+    }
+    .projects {
         height: 100vh;
         display: flex;
         scroll-snap-align: start;
